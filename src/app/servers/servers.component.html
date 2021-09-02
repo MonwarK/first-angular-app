@@ -1,0 +1,13 @@
+<h5>Create a new server</h5>
+
+<input 
+    type="text" 
+    class="form-control" 
+    [(ngModel)]="inputValue"
+/>
+
+<button class="btn btn-primary my-3" (click)="onCreateServer()" [disabled]="!allowNewServer">
+    Add Server
+</button>
+
+<p [innerText]="serverCreationStatus"></p>

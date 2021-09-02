@@ -1,0 +1,29 @@
+<div>
+    <h3>Login Form</h3>
+    <input 
+        type="text" 
+        class="form-control my-3" 
+        placeholder="Username" 
+        [(ngModel)]="usernameInput"
+    />
+    <input 
+        type="password" 
+        class="form-control mb-3" 
+        placeholder="Password" 
+        [(ngModel)]="passwordInput"
+    />
+    <button 
+        [disabled]="!isButtonEnabled()"
+        class="btn btn-primary w-100"
+        (click)="login()"
+    >Login</button>
+</div>
+
+<div class="my-5">
+    <app-success-alert *ngIf="signedIn; else notSignedIn"></app-success-alert>
+    <ng-template #notSignedIn>
+        <app-warning-alert></app-warning-alert>
+    </ng-template>
+</div>
+
+<p class="p-3 text-white" [ngClass]="getColor()">Styled Text</p>
